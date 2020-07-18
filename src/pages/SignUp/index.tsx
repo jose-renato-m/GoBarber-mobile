@@ -46,11 +46,33 @@ const SignUp: React.FC = () => {
                 console.log(data);
               }}
             >
-              <Input name="name" icon="user" placeholder="Nome" />
+              <Input
+                autoCapitalize="words"
+                name="name"
+                icon="user"
+                placeholder="Nome"
+                returnKeyType="next"
+              />
 
-              <Input name="email" icon="mail" placeholder="E-mail" />
+              <Input
+                keyboardType="email-address"
+                autoCorrect={false}
+                autoCapitalize="none"
+                name="email"
+                icon="mail"
+                placeholder="E-mail"
+                returnKeyType="next"
+              />
 
-              <Input name="password" icon="lock" placeholder="Senha" />
+              <Input
+                secureTextEntry
+                name="password"
+                icon="lock"
+                placeholder="Senha"
+                textContentType="newPassword"
+                returnKeyType="send"
+                onSubmitEditing={() => formRef.current?.submitForm()}
+              />
 
               <View>
                 <Button onPress={() => formRef.current?.submitForm()}>
